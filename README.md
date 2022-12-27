@@ -199,7 +199,7 @@ poetry install
 To run a mailhog instance locally, run the following command:
 
 ```
-docker run -d -p 1025:1025 -p 8025:8025 mailhog/mailhog
+docker-compose up -d
 ```
 
 
