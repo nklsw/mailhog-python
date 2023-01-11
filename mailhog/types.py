@@ -1,5 +1,5 @@
 from dataclasses import dataclass
-from typing import Dict, List, Union
+from typing import Dict, List, Union, Optional
 
 from dataclass_wizard import JSONWizard, json_field
 
@@ -114,7 +114,7 @@ class Message:
         """
         return [f"{path.mailbox}@{path.domain}" for path in self.to]
 
-    def get_subject(self) -> str:
+    def get_subject(self) -> Optional[str]:
         """Get the subject of the message.
 
         :return: The subject.

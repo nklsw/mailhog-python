@@ -1,8 +1,6 @@
-from typing import List
-
 import requests
 
-from .types import Message, Messages
+from .types import Messages
 
 
 class Mailhog:
@@ -14,11 +12,11 @@ class Mailhog:
     :raises requests.exceptions.ConnectionError: If the connection to Mailhog fails.
     """
 
-    def __init__(self, host: str = "localhost", port: int = 8025):
+    def __init__(self, host: str = "localhost", port: int = 8025) -> None:
         self.host = host
         self.port = port
 
-    def messages(self, start: int = 0, limit: int = 50) -> List[Message]:
+    def messages(self, start: int = 0, limit: int = 50) -> Messages:
         """Get multiple messages from Mailhog.
 
         :param start: The index of the first message to return, optional.
@@ -38,7 +36,7 @@ class Mailhog:
 
     def search(
         self, query: str, kind: str = "containing", start: int = 0, limit: int = 50
-    ) -> List[Message]:
+    ) -> Messages:
         """Search for messages in Mailhog.
 
         :param query: The query to search for.
