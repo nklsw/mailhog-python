@@ -142,3 +142,15 @@ def test_message_functions():
     assert messages.items[0].get_sender() == "from0@test.com"
     assert messages.items[0].get_recipients() == ["to0@test.com"]
     assert messages.items[0].get_subject() == "Test 0"
+
+
+def test_delete_message():
+    """
+    Test if individual messages can be deleted.
+    """
+    send_emails(1)
+
+    mailhog = Mailhog()
+    messages = mailhog.messages()
+    mailhog.delete(messages.items[0])
+    assert mailhog.messages().total == 0
