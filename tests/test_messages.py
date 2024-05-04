@@ -148,9 +148,9 @@ def test_delete_message():
     """
     Test if individual messages can be deleted.
     """
-    send_emails(1)
+    send_emails(2)
 
     mailhog = Mailhog()
     messages = mailhog.messages()
     mailhog.delete(messages.items[0])
-    assert mailhog.messages().total == 0
+    assert mailhog.messages().total == 1

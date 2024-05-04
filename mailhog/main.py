@@ -69,5 +69,7 @@ class Mailhog:
 
         :raises requests.exceptions.HTTPError: If the request fails.
         """
-        response = requests.delete(f"http://{self.host}:{self.port}/api/v1/messages/{message.id}")
+        response = requests.delete(
+            f"http://{self.host}:{self.port}/api/v1/messages/{message.id}"
+        )
         response.raise_for_status()
