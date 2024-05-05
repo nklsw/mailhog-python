@@ -35,6 +35,9 @@ mailhog.search('test@test.com', 'From')
 
 # Delete all messages
 mailhog.delete_all()
+
+# Delete a message
+mailhog.delete(messages.items[0])
 ```
 
 # API
@@ -96,6 +99,18 @@ from mailhog import Mailhog
 mailhog = Mailhog()
 
 mailhog.delete_all()
+```
+
+### `delete()`
+> Delete a message
+
+#### Example
+```python
+from mailhog import Mailhog
+
+mailhog = Mailhog()
+messages = mailhog.messages()
+mailhog.delete(messages.items[0])
 ```
 
 # Datatypes
@@ -182,7 +197,7 @@ This package is still a work in progress. If you find any bugs or have any sugge
 - [x] Mailhog API v2 Search Endpoint
 - [ ] Mailhog API v2 Jim Endpoint
 - [x] Mailhog API v1 Delete Messages Endpoint
-- [ ] Mailhog API v1 Delete Message Endpoint
+- [x] Mailhog API v1 Delete Message Endpoint
 
 
 ### Local Development
