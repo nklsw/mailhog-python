@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "mailhog"
-version = "0.1.0"
+version = "0.1.1"
 description = "A python client for the Mailhog API"
 keywords = ["mailhog", "client", "wrapper", "api"]
 authors = ["nklsw"]
